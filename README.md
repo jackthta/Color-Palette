@@ -1,3 +1,3 @@
 # ColorPalette
 
-2
+3
