@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddColorCategoryModalComponent } from '../interaction/add-color-category-modal/add-color-category-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public addColorCategoryModal: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openAddColorCategoryModal() {
+    const modalRef = this.addColorCategoryModal.open(AddColorCategoryModalComponent, {
+      width: '350px',
+      height: '350px'
+    });
+
+    modalRef.afterClosed().subscribe((result) => {
+      console.log('add-color-category modal closed with return data ' + result); //xTODO: Remove
+    });
   }
 
 }

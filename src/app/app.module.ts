@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { PageNotFoundComponent } from './auth/page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddColorCategoryModalComponent } from './home/interaction/add-color-category-modal/add-color-category-modal.component';
+
+// Angular material
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -15,14 +19,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddColorCategoryModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    // Angular material
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    AddColorCategoryModalComponent
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
