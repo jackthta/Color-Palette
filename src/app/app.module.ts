@@ -7,6 +7,7 @@ import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home/home.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { PageNotFoundComponent } from './auth/page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PageNotFoundComponent } from './auth/page-not-found/page-not-found.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
