@@ -1,3 +1,43 @@
-<div>
-    <div id="color_picker"></div>
+<div class="container" role="dialog">
+    <h1 class="title">Add color category</h1>
+
+    <form class="content" [formGroup]="colorPickerForm">
+        <!-- Color Category Name input-->
+        <div class="form_field">
+            <label for="category_name_input">
+                Category name:
+                <input id="category_name_input" type="text" formControlName="categoryName" maxlength="20" required
+                    aria-required="true" />
+
+                <!-- Error message -->
+                <div
+                    *ngIf="colorPickerForm.get('categoryName')?.invalid && (colorPickerForm.get('categoryName')?.dirty || colorPickerForm.get('categoryName')?.touched)">
+                    <small *ngIf="colorPickerForm.get('categoryName')?.hasError('required')">*This field is
+                        required!</small>
+                </div>
+            </label>
+        </div>
+
+        <!-- Color Picker Object -->
+        <div id="color_picker"></div>
+
+        <!-- HEX Code input -->
+        <div class="form_field">
+            <!-- Error message -->
+            <div>
+                <small *ngIf="!IS_VALID_HEXCOLOR">Please enter a valid hex color.</small>
+            </div>
+
+            <label for="color_picker_hex_input">
+                HEX:
+                <input id="color_picker_hex_input" type="text" formControlName="hexColor" maxlength="7" required
+                    aria-required="true" />
+            </label>
+        </div>
+    </form>
+
+    <section class="btn_container">
+        <button (click)="onCancel()">Cancel</button>
+        <button (click)="onSubmit()" [disabled]="colorPickerForm.invalid || !IS_VALID_HEXCOLOR">Add</button>
+    </section>
 </div>

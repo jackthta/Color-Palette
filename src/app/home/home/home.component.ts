@@ -21,7 +21,9 @@ export class HomeComponent implements OnInit {
     });
 
     modalRef.afterClosed().subscribe((result) => {
-      console.log('add-color-category modal closed with return data ' + result); //xTODO: Remove
+      //xTODO: Remove
+      console.log('add-color-category modal closed with return data ');
+      console.log(result);
     });
   }
 
