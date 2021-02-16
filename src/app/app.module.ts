@@ -13,6 +13,8 @@ import { AddColorCategoryModalComponent } from './home/interaction/add-color-cat
 
 // Angular material
 import { MatDialogModule } from '@angular/material/dialog';
+import { ColorRowComponent } from './home/color-row/color-row/color-row.component';
+import { ColorCategoryComponent } from './home/color-category/color-category/color-category.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     FooterComponent,
     PageNotFoundComponent,
-    AddColorCategoryModalComponent
+    AddColorCategoryModalComponent,
+    ColorRowComponent,
+    ColorCategoryComponent
   ],
   imports: [
     BrowserModule,

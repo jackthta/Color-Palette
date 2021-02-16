@@ -58,7 +58,17 @@ export class AddColorCategoryModalComponent implements OnInit {
     if (!this.isValidHexColor(HEX_CODE)) {
       this.IS_VALID_HEXCOLOR = false;
     } else {
-      // Return package of data to parent component.
+      //xTODO: Take result and add a color category row
+      // Do all the data pushing and updating in the add-color-category component:
+      // On onSubmit(), push the data into the database and then update the database's
+      // colorCategories array (either by pushing the new data directly in the array OR doing a pulling the whole array from
+      // the database).
+      // Once DatabaseService's colorCategories array is populated, home component should 
+      // populate the colorCategory component via a ngFor block. (Put it inside a div or something).
+
+
+
+      //xTODO: REMOVE THIS; do not return data to parent component.
       const categoryName = this.colorPickerForm.get('categoryName')?.value;
       const hexColor = this.colorPickerForm.get('hexColor')?.value;
 

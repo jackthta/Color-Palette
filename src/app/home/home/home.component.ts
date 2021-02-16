@@ -20,11 +20,8 @@ export class HomeComponent implements OnInit {
       height: '350px'
     });
 
-    modalRef.afterClosed().subscribe((result) => {
-      //xTODO: Remove
-      console.log('add-color-category modal closed with return data ');
-      console.log(result);
-    });
+    // xTODO: Remove this subscription.
+    modalRef.afterClosed().subscribe();
   }
 
 }
